@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin:0; background:{{palette.background}}; color:{{palette.text}}; font-family:'Segoe UI',system-ui,sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; overflow:hidden; }
+  .container { text-align:center; padding:40px; max-width:1200px; animation: fadeInUp 1.5s ease-out; }
+  h1 { font-size:4.5em; color:{{palette.accent}}; margin-bottom:20px; text-shadow:0 4px 30px rgba(0,0,0,0.5); line-height:1.2; }
+  .subtitle { font-size:2em; color:{{palette.text_secondary}}; animation: fadeIn 2s ease-in 0.5s both; }
+  .badge { display:inline-block; padding:8px 24px; background:{{palette.accent}}; color:#fff; border-radius:50px; font-size:1em; margin-bottom:30px; animation: fadeIn 1s ease-in 0.3s both; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeInUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="badge">{{topic}}</div>
+  <h1>{{title}}</h1>
+  <p class="subtitle">{{text}}</p>
+</div>
+</body>
+</html>

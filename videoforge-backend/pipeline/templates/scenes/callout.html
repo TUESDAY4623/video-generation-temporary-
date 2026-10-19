@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin:0; background:{{palette.background}}; color:{{palette.text}}; font-family:'Segoe UI',system-ui,sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; padding:60px; }
+  .callout { background:{{palette.secondary}}; border-left:6px solid {{palette.accent}}; padding:40px 60px; border-radius:12px; max-width:900px; box-shadow:0 10px 40px rgba(0,0,0,0.3); animation: slideIn 1s ease-out; }
+  h2 { font-size:2.2em; color:{{palette.accent}}; margin-bottom:20px; }
+  p { font-size:1.3em; line-height:1.7; color:{{palette.text_secondary}}; }
+  @keyframes slideIn { from { opacity:0; transform:translateX(-30px); } to { opacity:1; transform:translateX(0); } }
+</style>
+</head>
+<body>
+<div class="callout">
+  <h2>{{title}}</h2>
+  <p>{{text}}</p>
+</div>
+</body>
+</html>

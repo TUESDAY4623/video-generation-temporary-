@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin:0; background:{{palette.background}}; color:{{palette.text}}; font-family:'Segoe UI',system-ui,sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; padding:60px; }
+  .comparison { display:flex; gap:40px; max-width:1200px; width:100%; animation: fadeIn 1s ease-out; }
+  .side { flex:1; background:{{palette.secondary}}; padding:40px; border-radius:16px; text-align:center; }
+  .side h3 { font-size:1.5em; color:{{palette.accent}}; margin-bottom:20px; }
+  .side .value { font-size:3em; font-weight:bold; color:{{palette.text}}; }
+  .side .label { font-size:1.1em; color:{{palette.text_secondary}}; margin-top:10px; }
+  .vs { display:flex; align-items:center; font-size:2em; color:{{palette.accent}}; font-weight:bold; }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+</style>
+</head>
+<body>
+<div class="comparison">
+  <div class="side">
+    <h3>{{left_title}}</h3>
+    <div class="value">{{left_value}}</div>
+    <div class="label">{{left_label}}</div>
+  </div>
+  <div class="vs">VS</div>
+  <div class="side">
+    <h3>{{right_title}}</h3>
+    <div class="value">{{right_value}}</div>
+    <div class="label">{{right_label}}</div>
+  </div>
+</div>
+</body>
+</html>

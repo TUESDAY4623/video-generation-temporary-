@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin:0; background:{{palette.background}}; color:{{palette.text}}; font-family:'Segoe UI',system-ui,sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; padding:60px; }
+  .progress-container { max-width:800px; width:100%; }
+  h2 { font-size:2em; color:{{palette.accent}}; margin-bottom:40px; text-align:center; }
+  .step { display:flex; align-items:center; margin-bottom:30px; }
+  .step-num { width:50px; height:50px; border-radius:50%; background:{{palette.accent}}; color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.3em; font-weight:bold; flex-shrink:0; }
+  .step-content { margin-left:20px; flex:1; }
+  .step-title { font-size:1.2em; font-weight:bold; }
+  .step-desc { color:{{palette.text_secondary}}; margin-top:5px; }
+  .step-line { width:3px; height:30px; background:{{palette.accent}}; margin-left:23px; opacity:0.4; }
+</style>
+</head>
+<body>
+<div class="progress-container">
+  <h2>{{title}}</h2>
+  {% for step in steps %}
+    {% if not loop.last %}
+      <div class="step">
+        <div class="step-num">{{loop.index}}</div>
+        <div class="step-content">
+          <div class="step-title">{{step.title}}</div>
+          <div class="step-desc">{{step.description}}</div>
+        </div>
+      </div>
+      <div class="step-line"></div>
+    {% else %}
+      <div class="step">
+        <div class="step-num">{{loop.index}}</div>
+        <div class="step-content">
+          <div class="step-title">{{step.title}}</div>
+          <div class="step-desc">{{step.description}}</div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  body { margin:0; background:{{palette.background}}; color:{{palette.text}}; font-family:'Segoe UI',system-ui,sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; padding:40px; }
+  .container { width:90%; max-width:1200px; }
+  h2 { color:{{palette.accent}}; text-align:center; margin-bottom:30px; }
+  canvas { max-height:60vh; }
+</style></head>
+<body>
+<div class="container">
+  <h2>{{title}}</h2>
+  <canvas id="chart"></canvas>
+</div>
+<script>
+  const ctx = document.getElementById('chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: {{labels|tojson}},
+      datasets: [{
+        label: '{{title}}',
+        data: {{values|tojson}},
+        backgroundColor: '{{palette.accent}}',
+        borderColor: '{{palette.accent}}',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { labels: { color: '#fff' } } },
+      scales: {
+        x: { ticks: { color: '#a0a0a0' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+        y: { ticks: { color: '#a0a0a0' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+      },
+      animation: { duration: 1500, easing: 'easeInOutQuart' }
+    }
+  });
+</script>
+</body></html>

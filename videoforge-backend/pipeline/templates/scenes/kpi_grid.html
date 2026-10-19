@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin:0; background:{{palette.background}}; color:{{palette.text}}; font-family:'Segoe UI',system-ui,sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; padding:60px; }
+  .kpi-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:30px; max-width:1200px; width:100%; }
+  .kpi-card { background:{{palette.secondary}}; padding:30px; border-radius:16px; text-align:center; border-top:4px solid {{palette.accent}}; animation: scaleIn 0.6s ease-out backwards; }
+  .kpi-card:nth-child(1) { animation-delay: 0.1s; }
+  .kpi-card:nth-child(2) { animation-delay: 0.2s; }
+  .kpi-card:nth-child(3) { animation-delay: 0.3s; }
+  .kpi-value { font-size:3em; font-weight:bold; color:{{palette.accent}}; }
+  .kpi-label { font-size:1.1em; color:{{palette.text_secondary}}; margin-top:10px; }
+  @keyframes scaleIn { from { opacity:0; transform:scale(0.8); } to { opacity:1; transform:scale(1); } }
+</style>
+</head>
+<body>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-value">{{kpi1_value}}</div>
+    <div class="kpi-label">{{kpi1_label}}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">{{kpi2_value}}</div>
+    <div class="kpi-label">{{kpi2_label}}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">{{kpi3_value}}</div>
+    <div class="kpi-label">{{kpi3_label}}</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6366f1;
+  --color-primary-dark: #4f46e5;
+  --color-secondary: #0ea5e9;
+  --color-accent: #f43f5e;
+  --color-dark: #0f172a;
+  --color-dark-2: #1e293b;
+  --color-dark-3: #334155;
+  --color-dark-4: #475569;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+}
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-family: 'Inter', system-ui, sans-serif; }
+  body { background: #0f172a; color: #f1f5f9; min-height: 100vh; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-2.5 px-5 rounded-lg transition-colors duration-200 inline-flex items-center gap-2;
+  }
+  .btn-secondary {
+    @apply bg-dark-3 hover:bg-dark-4 text-white font-medium py-2.5 px-5 rounded-lg transition-colors duration-200 inline-flex items-center gap-2;
+  }
+  .card {
+    @apply bg-dark-2 rounded-xl border border-dark-3 p-5;
+  }
+  .input {
+    @apply w-full bg-dark-3 border border-dark-4 rounded-lg px-4 py-2.5 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all;
+  }
+  .input-label {
+    @apply block text-sm font-medium text-slate-300 mb-1.5;
+  }
+}

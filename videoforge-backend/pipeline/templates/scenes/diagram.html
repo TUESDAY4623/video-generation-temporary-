@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<style>
+  body { margin:0; background:{{palette.background}}; color:{{palette.text}}; font-family:'Segoe UI',system-ui,sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; padding:40px; }
+  .container { text-align:center; max-width:1200px; width:100%; }
+  h2 { color:{{palette.accent}}; margin-bottom:30px; }
+  .mermaid { background:{{palette.secondary}}; padding:40px; border-radius:16px; }
+</style></head>
+<body>
+<div class="container">
+  <h2>{{title}}</h2>
+  <div class="mermaid">{{mermaid_code}}</div>
+</div>
+<script>mermaid.initialize({ startOnLoad: true, theme: 'dark' });</script>
+</body>
+</html>

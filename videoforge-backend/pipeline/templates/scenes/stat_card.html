@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin:0; background:{{palette.primary}}; color:{{palette.text}}; font-family:'Segoe UI',system-ui,sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; padding:60px; }
+  .stat-container { text-align:center; animation: scaleIn 1s ease-out; }
+  .number { font-size:7em; font-weight:bold; color:{{palette.accent}}; line-height:1; text-shadow:0 4px 20px rgba(0,0,0,0.3); }
+  .label { font-size:1.5em; color:{{palette.text_secondary}}; margin-top:20px; }
+  .context { font-size:1.2em; color:{{palette.text}}; margin-top:30px; max-width:600px; line-height:1.6; }
+  @keyframes scaleIn { from { opacity:0; transform:scale(0.8); } to { opacity:1; transform:scale(1); } }
+</style>
+</head>
+<body>
+<div class="stat-container">
+  <div class="number">{{title}}</div>
+  <div class="label">{{text}}</div>
+</div>
+</body>
+</html>
